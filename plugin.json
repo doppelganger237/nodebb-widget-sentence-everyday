@@ -1,0 +1,30 @@
+{
+	"id": "nodebb-widget-sentence-everyday",
+	"url": "https://github.com/BrokenPaper/nodebb-widget-sentence-everyday",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "static:app.load", "method": "init"
+		},
+		{
+			
+			"hook": "filter:widgets.getWidgets", "method": "defineWidgets"
+		},
+		{
+			"hook":"filter:widget.render:sentence","method":"renderSentenceWidget"
+		}
+	],
+	"staticDirs": {
+		"static": "./static"
+	},
+	"less": [
+		"static/style.less"
+	],
+	"scripts": [
+		"static/lib/main.js"
+	],
+	"acpScripts": [
+		"static/lib/admin.js"
+	],
+	"templates": "static/templates"
+}
